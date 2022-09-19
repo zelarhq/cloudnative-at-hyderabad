@@ -1,0 +1,43 @@
+loki:
+  enabled: true
+promtail:
+  enabled: true
+fluent-bit:
+  enabled: false
+grafana:
+  enabled: false
+  sidecar:
+    datasources:
+      enabled: true
+  image:
+    tag: latest
+
+# config:
+#   schema_config:
+#     configs:
+#     - from: 2020-05-15
+#       # store: bigtable
+#       object_store: gcs
+#       schema: v11
+#       index:
+#         prefix: loki_index_
+#         period: 6h
+#   storage_config:
+#     # bigtable:
+#     #     instance: <instance_name>
+#     #     project: <project_name>
+#     gcs:
+#         bucket_name: loki-cluster-vm-logs
+#         # service_account: |-
+        #   {
+        #       "type": "service_account",
+        #       "project_id": "zelarsoft-350108",
+        #       "private_key_id": "2f99b9b8e64b16016fd0d31bc462ada2d581abf5",
+        #       "private_key": "-----BEGIN PRIVATE KEY-----\nMIIORfwdb/TpmsTUGvT--dummy-dummy-psMLBRmWGh7PNEvz7KB\nb23CG20gHIqeCpJJ56yYZhAiOmmj+El+k+8WSKEgAba2mwAhitgGBimeONxMINHI\nTkW1ENQtYC1xoMdwtBJDivl5rhstkxKWfb/6lq2Yejf28U6g3jrHPp9NYEYlsCpa\n1cGpC+snr+/sPYyZpRgwlCNhziqwbvUhBhaxhNjdvGFUvni2g/OUuEAvVZjrIzNB\nzPBMi9l9AgMBAAECggEABBY5s+uilFdN4ttxUpPEVkQp6EI85EVEenO59+Nt0Rw3\n33TxtTkvXOUZZAoViTkKV0fuoeks7gHvkmwTeHtqhY0SJ8aBybj1JjoJnU5GItix\nwE5VcMrRzkZ544aWfCwjQf2ZNeIR86w6CflOD+w2MNg4PRdf7oIX9l5Vo6jzH98u\nok/B5yE8QnRR8o40fLAF+k27dHh5yq++ueb7ZxYu4AWDRJp8uHoNKBHUHKx9mPPF\n6mCZET0xPNP7YPYhnkXD+a52XqVuZxNo3JmsEj+5FvInoz1ewqsoJI/18AD41UzX\nBekl28HeaM4bOvVGXCpKOm5m5nItSF85o2HGYLwmCQKBgQD/6cPAt1tyul3sGe04\nRY7raqFRlGwNSVlzo7ESeYkgAx262O1PB43TDKOWX8xYLpdo9Jp8vFSi4eY3+HG1\n1JCRFXQlG9aGyLih0WoPSFRq5J45eHhzKVsXHH/DM8kJpxgnTJH7KWHFYVF/WAKd\nR6Y+WYM2cwyu0mQY1p+0GFh7BwKBgQDzxeOnc6qfqxWTDtD76P5PanavzUHM4HT3\nW/1o327E4zwMjPFUkhcr4Ac7z6xL3vHDN/AYw0IZqFx5fE30r6ZIt4h8To0aVn0o\nva6fCuxWWZr/22raf7kxdtA/J+EbVzXdqbnTU9ts0AV9qyL3bd4f3hqu6ThrTYWs\n7phvKHlyWwKBgBTlGlWW4wGYE+keKM9KZqP0Hd3SV4wyK/qUJ/YRNFAH0Rqbcazd\nOgg8ZPL3OXENxNEN/7sliWePOEPjpi0pgPBHpycMgdSZePHFbnp29mWP6xdYLcWB\nX+2gJxJiHQ0Ltp4m01iFhXUfQA88uWHsIre+iUcd17BCf2fDxmBnCHprAoGAf7xR\nBzy3yoTWgEGCRo4XPDv4RzSR5y4yfC9qwRpbK7Y6kAUGrB8FH0t73t56VSNUocvc\n9szSBSnQkyQMoUutIWtyjFiI3aU2XjPOna4Wm0TG0I0EF8xXmVC93GokLbRsGGPI\naLEHSKRUTD5xyx96Bk7WwpKYqrlrc2tu2shlowMCgYEA+noeWpnqzVIgB23Rz1go\nBlq7PynvtC4SgbRv9JXfBbWcFdjCB9xsar2JY/bSzA6qcwmKxCC5M6jRMrLpNqwy\n9GGH7+f9sjyxff5t397ax8DZ7quI26tXHme9QjL4mBN/nwejgRAlFsRg67EXSVZ3\nbTKcdK+O2W5vMhi4aFdTErI=\n-----END PRIVATE KEY-----\n",
+        #       "client_email": "build-robot@dummy.iam.gserviceaccount.com",
+        #       "client_id": "109097628386556479097",
+        #       "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        #       "token_uri": "https://oauth2.googleapis.com/token",
+        #       "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        #       "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/build-robot%40zelarsoft-350108.iam.gserviceaccount.com"
+        #   }        

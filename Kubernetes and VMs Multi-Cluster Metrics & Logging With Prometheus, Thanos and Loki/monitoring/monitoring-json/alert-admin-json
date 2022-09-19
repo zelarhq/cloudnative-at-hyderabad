@@ -1,0 +1,54 @@
+{
+    "template_files": {
+      "cpu usage": "{{ define \"cpu usage\" }}\n  cpu usage\n{{ end }}"
+    },
+    "alertmanager_config": {
+      "route": {
+        "receiver": "grafana-default-email",
+        "routes": [
+          {
+            "receiver": "cpu usage"
+          }
+        ]
+      },
+      "templates": [
+        "cpu usage"
+      ],
+      "receivers": [
+        {
+          "name": "grafana-default-email",
+          "grafana_managed_receiver_configs": [
+            {
+              "uid": "kI9VVtg4k",
+              "name": "email receiver",
+              "type": "email",
+              "disableResolveMessage": false,
+              "settings": {
+                "addresses": "<example@email.com>"
+              },
+              "secureFields": {}
+            }
+          ]
+        },
+        {
+          "name": "cpu usage",
+          "grafana_managed_receiver_configs": [
+            {
+              "uid": "MQIE4pR4k",
+              "name": "cpu usage",
+              "type": "slack",
+              "disableResolveMessage": false,
+              "settings": {
+                "endpointUrl": "https://hooks.slack.com/services/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",
+                "mentionChannel": "here",
+                "recipient": "#squareyards-alerts"
+              },
+              "secureFields": {
+                "token": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }

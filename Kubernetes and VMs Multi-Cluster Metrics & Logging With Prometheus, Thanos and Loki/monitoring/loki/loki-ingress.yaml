@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # annotations:
+  #   cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: loki-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: loki-svc.6jxlxp1tuuo9z4crirpd.apps.eu-hlski.klusternetes.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: loki
+            port:
+              number: 3100
+        path: /
+        pathType: Prefix

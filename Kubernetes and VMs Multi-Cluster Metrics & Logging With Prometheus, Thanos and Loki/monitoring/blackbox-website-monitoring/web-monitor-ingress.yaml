@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    #nginx.ingress.kubernetes.io/rewrite-target: /thanos
+    #cert-manager.io/cluster-issuer: letsencrypt-prod
+    #nginx.ingress.kubernetes.io/redirect-permanent: "true"
+  name: web-monitor
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: web-monitor.34.171.161.171.nip.io
+    http:
+      paths:
+      - backend:
+         service:
+           name: web-monitor-kube-prometheu-prometheus
+           port:
+             number: 9090
+        path: /
+        pathType: Prefix

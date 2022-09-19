@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grafana.6jxlxp1tuuo9z4crirpd.apps.eu-hlski.klusternetes.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: grafana
+              port:
+                number: 80
